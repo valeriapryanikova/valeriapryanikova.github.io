@@ -7,12 +7,12 @@ from filedate import File
 
 drawings_path = 'static/drawings/lores/'
 hires_path = 'static/drawings/hires/'
-width, height = 720, 1080
+width, height = 540, 1080
 
 def resize_drawings():
     listdir_drawings = listdir(drawings_path)
     for f in listdir(hires_path):
-        if f not in listdir_drawings:
+        if f[-3:]=='png' and f not in listdir_drawings:
             orig_date = path.getmtime(hires_path+f)
             img = Image.open(hires_path+f)
             if img.size[0]>width or img.size[1]>height:
@@ -29,7 +29,7 @@ def check_resize():
             img = Image.open(drawings_path+f)
             if img.size[0]>width or img.size[1]>height:
                 img.thumbnail((width, height))
-                img.save(drawings_path+f)
+                img.save(drawings_path+f, optimize=True, quality=90)
                 File(drawings_path+f).set(modified=orig_date)
     print('check_resize() done')
     return

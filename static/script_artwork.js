@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		if (info_arr==null) {
 			// console.log(info_arr, sm_info_arr)
-			throw 404
+			// throw 404
 		}
 
 		document.querySelector('.drawings-card').innerHTML = `
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `
 	}
 	else {
-		throw 404
+		// throw 404
 	}
 }, false)
 
