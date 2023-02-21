@@ -1,0 +1,297 @@
+
+@font-face { font-family: valeriapryanikova; src: url('valeriapryanikova.otf'); } 
+
+:root {
+    --color0: #ff003f;
+    --color1: #f0f0ff;
+    --color2: #888;
+    --color3: #191923;
+}
+
+body {
+    background-color: black;
+    font-family: sans-serif;
+    font-size: 16px;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: white;
+}
+
+@media (max-width: 720px) {
+    body {
+        font-size: 12px;
+    }
+}
+
+
+/* header  */
+
+.app-header {
+    background-image: url('header.png');
+    background-position: left 50% top 45%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100px;
+}
+
+@media (max-width: 720px) {
+    .app-header {
+        height: 50px;
+    }
+}
+
+@media (max-width: 400px) {
+    .app-header {
+        height: 25px;
+    }
+}
+
+
+/* topbar */
+
+.app-topbar {
+    background-color: black;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid var(--color0);
+}
+
+.app-topbar a {
+    color: var(--color0);
+    text-align: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-family: valeriapryanikova;
+    font-size: 24px;
+}
+
+.app-topbar a:hover {
+    background-color: var(--color0);
+    color: var(--color1);
+}
+
+.app-topbar a:active {
+    color: var(--color1);
+}
+
+@media (max-width: 720px) {
+    .app-topbar a {
+        padding: 4px 8px;
+        font-size: 16px;
+    }
+}
+
+
+/* footer */
+
+.app-footer--wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 42px;
+    border-top: 2px solid var(--color0);
+    padding: 1em;
+    height: 100px;
+}
+
+.app-footer {
+    width: 1000px;
+}
+
+.app-footer div {
+    padding: 0.4em;
+}
+
+.app-footer a {
+    color: var(--color0);
+    text-decoration: none;
+}
+
+.app-footer a:hover {
+    color: var(--color1);
+}
+
+.app-footer div .fa {
+    padding: 6px;
+    font-size: 20px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 4px 0 0;
+    border-radius: 50%;
+    background: var(--color0);
+    color: black;
+}
+
+.app-footer div .fa:hover {
+    background: white;
+}
+
+
+/* search */
+
+.app-search {
+    float: right;
+}
+
+.app-search input {
+    background-color: black;
+    color: var(--color2);
+    padding: 6px 10px;
+    margin-top: 8px;
+    font-size: 16px;
+    border: none;
+}
+  
+.app-search button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: var(--color0);
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+  
+.app-search button:hover {
+    background: var(--color1);
+}
+
+@media (max-width: 720px) {
+    .app-search input, .app-search button { 
+        font-size: 12px;
+    }
+}
+
+
+/* drawings */
+
+.content--wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 42px;
+}
+
+.drawings-card--wrap {
+    padding: 0em 2em;
+    width: 1500px;
+}
+
+.drawings-card {
+    background-color: var(--color3);
+    display: inline-block;
+    margin: 0.5em;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.drawings-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.drawings-card div {
+    color: var(--color2);
+    padding: 4px 8px;
+    display: flex;
+    justify-content: right;
+    text-align: right;
+}
+
+.drawings-card .socmed {
+    color: var(--color2);
+    text-decoration: none;
+    padding-right: 16px;
+}
+
+.drawings-card .socmed:hover {
+    color: white;
+}
+
+.drawings-card .div-big-drawing {
+    color: var(--color2);
+    padding: 4px 8px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.grid {
+    max-width: 1500px;;
+}
+
+.grid-sizer, .grid-item {
+    margin: 1%;
+    width: 31%;
+    float: left;
+}
+
+@media (max-width: 720px) {
+    .grid-sizer, .grid-item {
+        width: 48%;
+    }
+}
+
+@media (max-width: 400px) {
+    .grid-sizer, .grid-item {
+        width: 100%;
+    }
+}
+
+
+/* about */
+
+.about-card--wrap {
+    padding: 0em 2em;
+    width: 1500px;
+}
+
+.about-card {
+    background-color: var(--color3);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 1em 1em;
+    margin: 1em;
+    border-radius: 8px;
+}
+
+.about-card img {
+    width: 90%;
+    border-radius: 50%;
+}
+
+.about-card h1 {
+    color: var(--color0);
+    font-family: valeriapryanikova;
+    font-size: 150%;
+    text-transform: uppercase;
+    margin: 1% 1%;
+}
+
+.about-card div {
+    color: var(--color1);
+    font-size: 105%;
+    margin: 1% 1%;
+}
+
+.about-card br {
+    content: "";
+    display: block;
+    height: 0.4em;
+}
+
+.about-card a {
+    color: var(--color0);
+    text-decoration: none;
+}
+
+.about-card ul {
+    padding:0;
+}
+
