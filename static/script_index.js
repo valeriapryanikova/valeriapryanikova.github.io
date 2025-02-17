@@ -1,18 +1,11 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-	var info_arr = getAllArr()
-
-	var q = (new URL(document.location)).searchParams.get('q')
-	if (q != null && q != '') {
-		info_arr = searchArr(info_arr, q.toLowerCase())
-	}
+	var info_arr = getArr()
 
 	for (var i = 0; i < info_arr.length; i++) {
 		document.querySelector('.grid').innerHTML += `
-		<div class="grid-item drawings-card">
-			<a href="artwork.html?name=${info_arr[i][ind.drawing]}"><img src="static/drawings/lores/${info_arr[i][ind.drawing]}" alt="${info_arr[i][ind.alt]}"></a>
-			<div>${getCharDiv(info_arr[i][ind.characters], info_arr[i][ind.fandom])}</div>
-			<div>${getSmDiv(info_arr[i])}${info_arr[i][ind.date]}</div>
+		<div class="grid-item">
+			<img src="static/drawings/${info_arr[i][ind.drawing]}" alt="${info_arr[i][ind.alt]}" onclick="showModal('${info_arr[i][ind.drawing]}')">
 		</div>
 		`
 	}
@@ -27,3 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 }, false)
 
+function showModal(drawing) {
+	document.getElementById("modal-image").src = `static/drawings/${drawing}`
+	document.getElementById("modal").style.display = "block"
+}
+function closeModal() {
+	document.getElementById("modal").style.display = "none"
+}
